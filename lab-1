@@ -1,0 +1,38 @@
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        string opa = Console.ReadLine();
+        Console.Write("Введи х: ");
+
+        double x = Convert.ToDouble(Console.ReadLine());
+        SortedSet<double> doubles = new SortedSet<double>();
+        string[] numbers = opa.Split(' ');
+
+        List<double> doubles1 = new List<double>();
+
+        foreach(string number in numbers)
+        {
+            if (Math.Abs(Convert.ToDouble(number)) % 2 >= 0 && Math.Abs(Convert.ToDouble(number)) % 2 < 1) {
+                doubles.Add(Convert.ToDouble(number)); 
+            }
+            else if (Convert.ToDouble(number) > x)
+            {
+                doubles1.Add(Convert.ToDouble(number));
+            }
+        }
+        foreach(double num in doubles)
+        {
+            Console.Write($"{num} ");
+        }
+        Console.WriteLine();
+        foreach (double num in doubles1)
+        {
+            Console.Write($"{num} ");
+        }
+    }
+
+}
