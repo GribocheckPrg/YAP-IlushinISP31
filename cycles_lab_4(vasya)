@@ -1,0 +1,21 @@
+using System;
+class Program {
+  static void Main() {
+      
+    Console.Write("Щелчков произошло: ");
+    int n = int.Parse(Console.ReadLine());
+    
+    for(int i = 0; i < 1; i++) {
+        
+        TimeSpan time = default(TimeSpan);
+        int j = 0;
+        
+        while(j < n) {
+            
+            j++;
+            time = new TimeSpan(j, j*5 + (int)(60/360.0*30.0),0);
+        }
+        Console.Write("Итоговое время: " + time);
+    }
+  }
+}
