@@ -1,0 +1,18 @@
+using System;
+class Program {
+  static void Main() {
+      
+    Console.Write("Количество этажей у ёлочки: ");
+    
+    int floor = int.Parse(Console.ReadLine());
+
+    for (int i = 1; i <= floor; i++) {
+    
+        for (int j = 0; j < i; j++) {
+        
+        string igolki = new string('*', j);
+        Console.WriteLine(igolki.PadLeft(floor) + "*" + igolki);
+        }
+    }
+  }
+}
