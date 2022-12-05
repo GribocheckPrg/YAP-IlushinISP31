@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+ 
+public class Example
+{
+    public static void Main()
+    {
+        string[] strings = new string[] {"9", "5", "3", "5", "8", "4", "2", "0", "6", "6", "1", "8", "9", "9"};
+        
+        int[] ints = Array.ConvertAll(strings, s => int.Parse(s));
+        Console.WriteLine(String.Join(" ", ints));
+        
+        int min = int.MaxValue;
+        
+        int max = Int32.MinValue;
+        for (var i = 0; i < ints.Length; i++)
+        {
+            if (ints[i] > max) {
+            max = ints[i];
+            }
+        }
+        for (int i = 0; i < ints.Length; i++)
+        {
+            if (ints[i] < min)
+                min = ints[i];
+        }
+        
+        List<int> list = new List<int>(ints);
+        list.Insert(0, max);
+        list.Insert(0, min);
+        
+        list.Reverse();
+        
+        int[] ints_fin = list.ToArray();
+        var str = string.Join(" ", ints_fin);
+        Console.WriteLine(str);
+    }
+}
