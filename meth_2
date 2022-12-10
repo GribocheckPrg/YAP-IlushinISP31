@@ -1,0 +1,15 @@
+using System;
+
+class Program {
+    static void Factorize(int number)
+    {
+        for(int i = 1; i < number; i++)
+        {
+          if(number % i == 0 && i <= number/i) Console.WriteLine(number + " = " + i + " * " + (number/i));
+        }
+    }
+    static void Main(string[] args) {
+        int num = int.Parse(Console.ReadLine());
+        Factorize(num);
+    }
+}
