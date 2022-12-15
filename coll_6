@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+
+class Program {
+    static void Main(string[] args) {
+      Console.WriteLine("Введите диапазон:");
+      Random random = new Random();
+      int a = int.Parse(Console.ReadLine());
+      int b = int.Parse(Console.ReadLine());
+      var list = new List<int>() {a};
+      for(int i = a + 1; i < b; i++)
+      {
+        int rand = random.Next(0, 2);
+        if(rand == 1) list.Add(i);
+      }
+      list.Add(b);
+      int k = a;
+      for(int i = 0; i < list.Count; i++)
+      {
+        if(k < list[i])
+        {
+          Console.Write(k + " ");
+          k++;
+          i--;
+        }
+        else k++;
+      }
+    }
+}
