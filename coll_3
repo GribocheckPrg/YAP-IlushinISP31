@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+
+class Program {
+    static List<int> GetList(int n)
+    {
+      Random random = new Random();
+      var list = new List<int>();
+      for(int i = 0; i < n; i++)
+      {
+        list.Add(random.Next(0, 100));
+      }
+      return list;
+    }
+    static void Main(string[] args) {
+        var lis = new List<int>();
+        Console.Write("Введите n: ");
+        int n = int.Parse(Console.ReadLine());
+        lis = GetList(n);
+        for(int i = 0; i < lis.Count; i++)
+        {
+          Console.Write(lis[i] + " ");
+        }
+    }
+}
