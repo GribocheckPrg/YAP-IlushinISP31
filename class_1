@@ -1,0 +1,40 @@
+using System;
+
+public class MainClass
+{
+    public class MyString
+    {
+        public string str;
+        public string Reverse()
+        {
+            string reverse_s = "";
+            for (int i = str.Length - 1; i > -1; i--) { 
+                reverse_s = reverse_s + str[i]; 
+            };
+            return reverse_s;
+        }
+        public string UcFirst()
+        {
+            return str.Substring(0, 1).ToUpper() + str.Substring(1);
+        }
+        public string UcWords()
+        {
+            string ucwords_s = "";
+            foreach (string s in str.Split(' '))
+            {
+                ucwords_s = ucwords_s + s.Substring(0, 1).ToUpper() + s.Substring(1) + " ";
+            }
+            return ucwords_s;
+        }
+    }
+
+    public static void Main()
+    {
+        var sample_str = new MyString();
+        Console.Write("Введи строку: ");
+        sample_str.str = Console.ReadLine();
+        Console.WriteLine("Reverse - " + sample_str.Reverse());
+        Console.WriteLine("UcFirst - " + sample_str.UcFirst());
+        Console.WriteLine("UcWords - " + sample_str.UcWords());
+    }
+}
