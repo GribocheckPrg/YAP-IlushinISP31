@@ -1,0 +1,38 @@
+using System;
+
+class Program {
+    class nasekomoe {
+      public int x;
+      public int y;
+      public int z;
+
+      public nasekomoe(int x1, int y1, int z1)
+      {
+        x = x1;
+        y = y1;
+        z = z1;
+      }
+
+      public double Rastoynie(nasekomoe p)
+      {
+        double rast = Math.Abs(Math.Sqrt(Math.Pow(p.x - x, 2) + Math.Pow(p.y - y, 2) + Math.Pow(p.z - z, 2)));
+        return rast;
+      }
+
+      public double Way(nasekomoe m)
+      {
+        double pyt = Math.Round(Math.Abs(Math.Sqrt(Math.Pow((m.x - x), 2) + Math.Pow((m.y - y), 2))) + z, 5);
+        return pyt;
+      }
+    };
+  
+    static void Main(string[] args) {
+      nasekomoe myxa = new nasekomoe(3, 12, 0);
+      nasekomoe payk = new nasekomoe(6, 9, 0);
+      if(myxa.z != 0) {
+        Console.WriteLine("Некорректные данные.");
+      }
+      Console.WriteLine("Расстояние между насекомыми: " + myxa.Rastoynie(payk));
+      Console.WriteLine("Путь, который необходимо пройти пауку до мухи: " + payk.Way(myxa));
+    }
+}
